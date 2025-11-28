@@ -16,13 +16,7 @@
       ],
       "id": "684617d5-f67f-498a-8567-2470e0b6537f",
       "name": "Telegram Trigger",
-      "webhookId": "b0aa0b90-4b49-4f94-bafc-7d14d9142d92",
-      "credentials": {
-        "telegramApi": {
-          "id": "MGrq1LJ3x5fbfbrp",
-          "name": "Telegram account"
-        }
-      }
+      "webhookId": "b0aa0b90-4b49-4f94-bafc-7d14d9142d92"
     },
     {
       "parameters": {
@@ -40,13 +34,7 @@
       ],
       "id": "3cb96fe2-a266-4d61-9838-e3cf46ce3cfc",
       "name": "Send a text message",
-      "webhookId": "85c1800f-914c-489d-a95d-73b0aa99fb7d",
-      "credentials": {
-        "telegramApi": {
-          "id": "MGrq1LJ3x5fbfbrp",
-          "name": "Telegram account"
-        }
-      }
+      "webhookId": "85c1800f-914c-489d-a95d-73b0aa99fb7d"
     },
     {
       "parameters": {
@@ -83,13 +71,7 @@
         176
       ],
       "id": "7a759ebd-29cb-4caa-bed3-ff03335404a8",
-      "name": "OpenAI Chat Model",
-      "credentials": {
-        "openAiApi": {
-          "id": "QGLGU40faXrw5Xy2",
-          "name": "OpenAi account"
-        }
-      }
+      "name": "OpenAI Chat Model"
     },
     {
       "parameters": {
@@ -110,14 +92,6 @@
         "method": "POST",
         "url": "https://api.langsearch.com/v1/web-search",
         "sendHeaders": true,
-        "headerParameters": {
-          "parameters": [
-            {
-              "name": "Authorization",
-              "value": "sk-e72b2d96142b43b98ccb234b014a551f"
-            }
-          ]
-        },
         "sendBody": true,
         "bodyParameters": {
           "parameters": [
@@ -167,13 +141,7 @@
       ],
       "id": "fda8a294-851e-4a37-a073-ab4f9ad4ffaf",
       "name": "Send a chat action",
-      "webhookId": "04b8e53c-e069-49c4-bb15-3e137cc639f9",
-      "credentials": {
-        "telegramApi": {
-          "id": "MGrq1LJ3x5fbfbrp",
-          "name": "Telegram account"
-        }
-      }
+      "webhookId": "04b8e53c-e069-49c4-bb15-3e137cc639f9"
     },
     {
       "parameters": {
@@ -255,13 +223,7 @@
         32
       ],
       "id": "df048107-bf13-4f67-b20a-00adbdf3169d",
-      "name": "Transcribe a recording",
-      "credentials": {
-        "openAiApi": {
-          "id": "QGLGU40faXrw5Xy2",
-          "name": "OpenAi account"
-        }
-      }
+      "name": "Transcribe a recording"
     },
     {
       "parameters": {
@@ -292,146 +254,4 @@
         "fileId": "={{ $json.message.voice.file_id }}",
         "additionalFields": {}
       },
-      "type": "n8n-nodes-base.telegram",
-      "typeVersion": 1.2,
-      "position": [
-        -432,
-        32
-      ],
-      "id": "a510c9c6-7773-47df-b6fb-43aefe322d13",
-      "name": "Get a file",
-      "webhookId": "962847a9-ff0b-47b2-9135-d6dd3866b3d6",
-      "credentials": {
-        "telegramApi": {
-          "id": "MGrq1LJ3x5fbfbrp",
-          "name": "Telegram account"
-        }
-      }
-    }
-  ],
-  "pinData": {},
-  "connections": {
-    "Telegram Trigger": {
-      "main": [
-        [
-          {
-            "node": "Send a chat action",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "Switch",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "OpenAI Chat Model": {
-      "ai_languageModel": [
-        [
-          {
-            "node": "AI Agent",
-            "type": "ai_languageModel",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "AI Agent": {
-      "main": [
-        [
-          {
-            "node": "Send a text message",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Simple Memory": {
-      "ai_memory": [
-        [
-          {
-            "node": "AI Agent",
-            "type": "ai_memory",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "HTTP Request": {
-      "ai_tool": [
-        [
-          {
-            "node": "AI Agent",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Switch": {
-      "main": [
-        [
-          {
-            "node": "AI Agent",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Get a file",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Transcribe a recording": {
-      "main": [
-        [
-          {
-            "node": "Edit Fields",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Get a file": {
-      "main": [
-        [
-          {
-            "node": "Transcribe a recording",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Edit Fields": {
-      "main": [
-        [
-          {
-            "node": "AI Agent",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    }
-  },
-  "active": false,
-  "settings": {
-    "executionOrder": "v1"
-  },
-  "versionId": "f99ef9b3-95a3-4b00-b9ba-1185343e6716",
-  "meta": {
-    "templateCredsSetupCompleted": true,
-    "instanceId": "0a54e327c112b6e1cf03ed15eecb8b9041a013b2a48663793aa6dc49185bd576"
-  },
-  "id": "f4UiwfdCmNGjEZXH",
-  "tags": []
-}
+      "type": "n8n-n
