@@ -58,3 +58,29 @@ Uses gpt-4.1-nano for generating intelligent responses.
 | **Transcription Node**   | Converts voice → text              |
 | **HTTP Request Tool**    | Allows internet search queries     |
 | **Send Message Node**    | Sends responses back to user       |
+
+
+
+
+⚙️ How to Use This Workflow
+
+
+1️⃣ Import Workflow into n8n
+
+Go to n8n → Workflows → Import from File
+
+Select First Telegram Bot.json
+
+2️⃣ Add Your Credentials
+
+You need:
+
+OpenAI API key
+
+Telegram Bot Token
+
+LangSearch API key
+
+3️⃣ Activate Workflow
+
+Click Activate and start chatting with your bot in Telegram.
