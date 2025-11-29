@@ -13,7 +13,7 @@ Sends replies back using Telegram Send Message Node
 
 ✅ 2. AI Agent with System Rules
 
-The bot is set up as Leo Bot (Leo Das) — an intelligent assistant with:
+The bot is set up as PixoBot✨(Leo Das) — an intelligent assistant with:
 
 Greeting rules
 
